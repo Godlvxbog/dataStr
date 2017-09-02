@@ -1,0 +1,7 @@
+
+删除：
+
+1、一般是需要找到该节点的前一个节点
+2、关于遍历：node != null ,node.next != null ,
+3、指针偏移  node = node.next;
+4、删除：node.next = next ;
