@@ -78,9 +78,31 @@ public class InOrderTree {
 
     }
 
+
+    //使用递归
+    //中序遍历：中间访问 当前节点，先访问左孩子问题，
+//    需要考虑：
+//    分：向下扩散 ，以及到叶子节点的处理
+
+    public static void inOrder3(TNode root){
+
+        if (root == null){
+            return;
+        }
+        //向下扩散： 先访问左边孩子问题
+        inOrder3(root.left);
+
+        // 访问当前节点
+        System.out.println(root.data);
+//        向下扩散：右边
+        inOrder3(root.right);
+
+    }
+
+
     public static void main(String[] args) {
         TNode root = TNode.buildTree();
-        inOrder2(root);
+        inOrder3(root);
 
     }
 }
