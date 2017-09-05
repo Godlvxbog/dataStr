@@ -15,6 +15,9 @@ public class SortArrToBST {
         if (start > end){
             return null;
         }
+        if(start == end){
+            return new TNode(list.get(start));
+        }
 
         int mid = (start + end) / 2;
         TNode cuNode = new TNode(list.get(mid));//得到当前节点
