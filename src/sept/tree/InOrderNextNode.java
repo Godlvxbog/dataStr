@@ -67,7 +67,7 @@ public class InOrderNextNode {
 
         //2 右边不存在，
         TreeNode parent = node.parent;
-        //找到第一个该节点是其父亲节点的左孩子节点的
+        //找到第一个当前节点 是其父亲节点 的左孩子节点的
         while (parent != null && !isLeft(node,parent)){
             node = parent;//往上遍历
             parent = node.parent;
