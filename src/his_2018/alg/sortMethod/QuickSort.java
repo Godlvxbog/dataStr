@@ -12,13 +12,13 @@ public class QuickSort {
         while (i<j){//退出是i == j
 
             //分别找坑
-            while (i<j && nums[j] >= temp ){//添加一个哨兵
+            while (i<j && nums[j] >= temp ){//添加一个哨兵：右边第一个数比左边的小，则右边放在左边的
                 j--;
             }
             nums[i] = nums[j];
 
             //往后找
-            while (i<j && nums[i] < temp){//添加哨兵
+            while (i<j && nums[i] < temp){//添加哨兵：左边第一个数比右边的大，则交换，则左边放在右边的
                 i++;
             }
             nums[j] = nums[i];
@@ -42,10 +42,12 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int[] nums = {
-                54,35,48,36,27,12,44,44,8,14,26,17,28
+                6,3,2,7,5,4,9,1
         };
 
-        quicksort(nums,0,13);
+        quicksort(nums,0,nums.length-1);
+
+        System.out.println(1);
 
     }
 
