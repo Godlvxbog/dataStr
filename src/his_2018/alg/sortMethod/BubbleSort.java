@@ -18,7 +18,8 @@ public class BubbleSort {
     public static int[] bubbleSort2(int[] nums, int n){
         for (int i = 0; i< n ; i++){
             for (int j = n-1;j>i;j--){//从后往前进行排序，一直到已经排序的了
-                if(nums[j-1] > nums[j]){
+                int temp = nums[j];
+                if(nums[j-1] > temp){//如果前面的值比当前的值还要大，那么就交换
                     swap(nums,j-1,j);
                 }
             }
