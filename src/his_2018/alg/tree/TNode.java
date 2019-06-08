@@ -25,36 +25,6 @@ public class TNode {
         this.data = data;
     }
 
-
-
-
-    public TNode insert(TNode head,TNode node){
-        if (head ==null){
-            head =node;
-            return head;
-        }
-
-
-        //赋值
-        if (node.data < head.data){
-            if (head.left ==null){
-                head.left = node;
-            }else{
-                insert(head.left,node);
-            }
-        }
-        else{
-            if (head.right ==null){
-                head.right = node;
-            }else{
-                insert(head.right,node);
-            }
-        }
-        return head;
-    }
-
-
-
     public static TNode insert(TNode node,int data) {
         if (node == null) {
             node = new TNode(data);
@@ -92,14 +62,6 @@ public class TNode {
         root.insert(root,9);
         root.insert(root,11);
 
-
-//        root.insert(root,25);
-//        root.insert(root,21);
-//        root.insert(root,27);
-//        root.insert(root,42);
-//        root.insert(root,72);
-////        root.insert(root,108);
-//        root.insert(root,36);
         return root;
     }
 
