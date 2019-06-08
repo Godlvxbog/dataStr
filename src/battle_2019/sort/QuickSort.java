@@ -1,4 +1,4 @@
-package battle_2019;
+package battle_2019.sort;
 
 
 import java.util.Random;

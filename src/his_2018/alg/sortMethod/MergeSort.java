@@ -2,6 +2,7 @@ package his_2018.alg.sortMethod;
 
 /**
  * Created by Administrator on 2017/2/25.
+ * 参考：https://www.cnblogs.com/chengxiao/p/6194356.html
  */
 public class MergeSort {
 

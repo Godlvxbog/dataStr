@@ -1,4 +1,4 @@
-package battle_2019;
+package battle_2019.sort;
 
 /**
  * 待排序的数字在i的后面，i--temp，上浮冒泡排序，从后面往前面排序
