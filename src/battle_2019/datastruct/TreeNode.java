@@ -38,16 +38,21 @@ public class TreeNode {
         return root;
     }
 
-    public static void main(String[] args) {
+    public static TreeNode buildTree(){
         TreeNode root = new TreeNode(100);
         insert(root,50);
         insert(root,200);
         insert(root,60);
         insert(root,30);
+//        insert(root,40);
         insert(root,300);
-        insert(root,400);
+        insert(root,150);
         System.out.println(root);
+        return root;
+    }
 
+    public static void main(String[] args) {
+        TreeNode root = buildTree();
         inOrder2(root);
         System.out.println(root);
     }
