@@ -1,6 +1,8 @@
 package battle_2019.datastruct;
 
+import java.util.Queue;
 import java.util.Stack;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class TreeNode {
     public TreeNode left ;
@@ -53,7 +55,8 @@ public class TreeNode {
 
     public static void main(String[] args) {
         TreeNode root = buildTree();
-        inOrder2(root);
+//        inOrder2(root);
+        layerOrder(root);
         System.out.println(root);
     }
 
@@ -115,6 +118,28 @@ public class TreeNode {
 
         }
     }
+
+    /**
+     * 广度优先遍历BFS
+     * @param root
+     */
+    public static void layerOrder(TreeNode root){
+        Queue<TreeNode> queue = new LinkedBlockingQueue<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            TreeNode front = queue.poll();
+            System.out.println(front.data);
+
+            if (front.left != null){
+                queue.add(front.left);
+            }
+            if (front.right != null){
+                queue.add(front.right);
+            }
+        }
+
+    }
+
 
 
 }

@@ -5,12 +5,17 @@ import battle_2019.datastruct.MyNode;
 import java.util.Stack;
 
 /**
- * 从尾打印头链表，逆序打印链表
+ * 1、从尾打印头链表，逆序打印链表
+ * 2、翻转链表 stack
+ * 3、使用指针
+ *
  */
 public class ResNode {
     public static void main(String[] args) {
         MyNode node = MyNode.initNode();
-        resNdoe(node);
+//        MyNode res = resNdoe2(node);
+        MyNode res2 = resKNdoe(node,3);
+        System.out.println(res2);
 
     }
 
@@ -88,5 +93,53 @@ public class ResNode {
         }
         cur.next = null;     //最后的要为null作为最后一个元素。
         return head;
+    }
+
+    /**
+     * 采用非stack进行处理
+     * @param node
+     * @return
+     */
+    public static MyNode resNdoe2(MyNode node) {
+        MyNode resNode = null;//已经逆序的链表
+        MyNode cur = node;//当前节点
+        while (cur != null){//遍历
+            MyNode next = cur.next;//下一个节点
+
+            cur.next =resNode;//当前节点链接上已经逆序的几点。
+            resNode = cur ;//已经逆序的节点增加了一个节点
+            cur = next;//j++
+        }
+        return resNode;
+    }
+
+
+
+    /**
+     * 链表的倒数第k个节点:
+     * 快慢指针
+     * stack
+     *
+     * 注意点：node.size()如果小于k
+     * @param node
+     * @return
+     */
+    public static MyNode resKNdoe(MyNode node,int k) {
+        if (k <=0 ){
+            return null;
+        }
+        MyNode fast = node;
+        MyNode slow = node;
+        //node.size()如果小于k做异常处理
+        while (k > 0){
+            fast = fast.next;
+            k--;
+        }
+
+        while (fast != null){
+            fast =fast.next;
+            slow = slow.next;
+        }
+        return slow;
     }
 }
