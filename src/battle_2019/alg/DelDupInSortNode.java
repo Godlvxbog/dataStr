@@ -29,7 +29,7 @@ public class DelDupInSortNode {
         list.add(50);
         list.add(50);
         MyNode node = MyNode.buildNodesFromArray(list);
-        MyNode res = delNode(node);
+        MyNode res = delNode2(node);
         System.out.println(res);
     }
 
@@ -55,6 +55,46 @@ public class DelDupInSortNode {
                 MyNode tobeDel = cur;
                 while (tobeDel != null && data == tobeDel.data){
                     tobeDel = tobeDel.next;
+                    cur = cur.next;
+                    if (next != null){ //关注最后一个节点。
+                        next = next.next;
+                    }
+
+                }
+                pre.next = next;
+            }
+        }
+        return node;
+    }
+
+    /**
+     * 保留其中一个元素，则找到相同元素是否，pre先往前移动一个，保留该元素。
+     * @param node
+     * @return
+     */
+    public static MyNode delNode2(MyNode node) {
+        MyNode pre = node;
+        MyNode cur = pre.next;
+        MyNode next = cur.next;
+
+        while (cur != null) {
+            //设置一个标志为判断是否要删除。
+            boolean isDel = false;
+            if (next != null && cur.data == next.data){
+                isDel =true;
+            }
+
+            if (!isDel){
+                pre= pre.next;
+                cur = cur.next;
+                if (next != null){
+                    next = next.next;
+                }
+            }else {
+                //相等
+                int data = cur.data;
+                pre = pre.next;
+                while (cur != null && data == cur.data){
                     cur = cur.next;
                     if (next != null){ //关注最后一个节点。
                         next = next.next;
