@@ -32,6 +32,7 @@ public class DepthOfTree {
     }
 
     public static  boolean isBanlance(TreeNode node){
+        //叶子节点的初始化，所有的树相关的都要画图。
         if (node == null){
             return true;
         }
