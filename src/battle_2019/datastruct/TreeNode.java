@@ -56,7 +56,7 @@ public class TreeNode {
     public static void main(String[] args) {
         TreeNode root = buildTree();
 //        inOrder2(root);
-        layerOrder(root);
+        inOrder3(root);
         System.out.println(root);
     }
 
@@ -105,6 +105,25 @@ public class TreeNode {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode cur = root;
         while (!stack.isEmpty() || cur != null){//未达到最后一个节点
+            if(cur!= null){ //一直遍历左边的节点并yanzhan
+                stack.push(cur);
+                cur =cur.left;//left++
+            }else{
+                //压wan了左边的，到底了，打印当前节点了。
+                cur = stack.pop();
+                System.out.println(cur.data);
+
+                cur =cur.right;//cur切换为stack右边
+            }
+
+        }
+    }
+
+    public static void  inOrder3(TreeNode root){
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        stack.push(cur);
+        while (!stack.isEmpty() ){//未达到最后一个节点
             if(cur!= null){ //一直遍历左边的节点并yanzhan
                 stack.push(cur);
                 cur =cur.left;//left++

@@ -2,6 +2,9 @@ package battle_2019.datastruct.tree;
 
 import battle_2019.datastruct.TreeNode;
 
+import java.util.ArrayList;
+import java.util.Stack;
+
 public class KthBstNode {
 
     public static void main(String[] args) {
@@ -15,7 +18,7 @@ public class KthBstNode {
         TreeNode.insert(root,6);
         TreeNode.insert(root,8);
 
-        TreeNode node = kthNode(root,6);
+        TreeNode node = kthNode3(root,6);
         System.out.println(node);
     }
 
@@ -52,5 +55,61 @@ public class KthBstNode {
         }else {
             return null;
         }
+    }
+
+
+    /**
+     * 借助中序遍历保存数组
+     * @param root
+     * @param k
+     * @return
+     */
+    public static TreeNode kthNode3(TreeNode root,int k){
+        //异常处理。
+        inOrder(root);
+        return nodes.get(k-1);
+    }
+    public static ArrayList<TreeNode> nodes = new ArrayList<>();
+    public static void inOrder(TreeNode root){
+        if (root == null){
+            return;
+        }
+        if (root.left != null){
+            inOrder(root.left);
+        }
+        nodes.add(root);
+
+        if (root.right!= null){
+            inOrder(root.right);
+        }
+    }
+
+    /**
+     * 非递归
+     * @param root
+     * @param k
+     * @return
+     */
+    public static TreeNode kthNode2(TreeNode root,int k){
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);//根节点yaru
+        Integer index=0;
+        TreeNode res = null;
+        while (!stack.isEmpty()){
+            if (root != null){//左遍历到底
+                stack.push(root);
+
+                root = root.left;
+            }else {
+                root = stack.pop();
+                index++;
+                if (index == k){
+                    res = root;
+                    break;
+                }
+                root= root.right;
+            }
+        }
+        return res;
     }
 }
