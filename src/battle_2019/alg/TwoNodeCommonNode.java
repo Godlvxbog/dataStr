@@ -5,6 +5,8 @@ import battle_2019.datastruct.MyNode;
 import java.util.Stack;
 
 /**
+ *
+ * 【剑指Offer ：37】
  * 找出两个链表的第一个公共节点。
  * 拓扑结构是 Y型。
  *

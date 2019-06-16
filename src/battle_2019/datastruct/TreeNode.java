@@ -4,6 +4,9 @@ import java.util.Queue;
 import java.util.Stack;
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * 【剑指Offer ：中序遍历，非递归】
+ */
 public class TreeNode {
     public TreeNode left ;
     public TreeNode right;

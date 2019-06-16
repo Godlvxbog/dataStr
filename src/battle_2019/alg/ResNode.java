@@ -5,6 +5,7 @@ import battle_2019.datastruct.MyNode;
 import java.util.Stack;
 
 /**
+ * 【剑指Offer ：5、16】
  * 1、从尾打印头链表，逆序打印链表
  * 2、翻转链表 stack
  * 3、使用指针

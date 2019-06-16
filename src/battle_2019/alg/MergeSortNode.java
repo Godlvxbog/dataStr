@@ -5,6 +5,7 @@ import battle_2019.datastruct.MyNode;
 import java.util.ArrayList;
 
 /**
+ * 【剑指Offer ：17】
  * 合并两个有序的链表
  */
 public class MergeSortNode {

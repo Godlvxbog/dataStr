@@ -5,6 +5,9 @@ import battle_2019.datastruct.TreeNode;
 import static battle_2019.datastruct.TreeNode.insert;
 
 /**
+ * 【剑指Offer ：50】
+ *
+ *
  * 给你一棵树node，以及一棵树中的两个节点A,B，判断A,B两个节点的最近公共祖先的节点
  * <p>
  * 思路一：从上往下先序遍历，

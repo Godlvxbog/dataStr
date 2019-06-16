@@ -5,6 +5,7 @@ import battle_2019.datastruct.MyNode;
 import java.util.ArrayList;
 
 /**
+ * 【剑指Offer ：57】
  * 删除链表中的重复节点，该链表已经是有序的了。
  * 需要考虑第一个就是重复的节点:采用虚拟节点模拟
  * 最后的是重复节点等特殊场景：
