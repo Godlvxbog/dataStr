@@ -23,7 +23,7 @@ public class KthBstNode {
     public static Integer index =0;
 
     /**
-     * 递归的写法：还是没搞懂
+     * 递归的写法：还是没搞懂，中序遍历，只要有一个叶子节点是null就加一，否则返回当前root
      * @param root
      * @param k
      * @return
