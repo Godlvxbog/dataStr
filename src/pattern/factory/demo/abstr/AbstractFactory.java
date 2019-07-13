@@ -8,7 +8,7 @@ import pattern.factory.demo.milk.Milk;
  * 抽象工厂是用户的主入口
  * 在Spring中应用得最为广泛的一种设计模式
  *
- *
+ *抽象的符合流水线的。
  */
 public abstract class AbstractFactory {
 

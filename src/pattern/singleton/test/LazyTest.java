@@ -1,0 +1,21 @@
+package pattern.singleton.test;
+
+
+import pattern.singleton.myaction.MyBeanFactory;
+
+/**
+ * Created by Tom on 2018/3/8.
+ */
+public class LazyTest {
+
+    public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 200000000;i ++) {
+            Object object = MyBeanFactory.getBean("pattern.singleton.test.Pojo");
+            System.out.println(object);
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("总耗时：" + (end - start));
+    }
+
+}
