@@ -16,6 +16,7 @@ public class LazyOne {
     private static LazyOne lazyOne= null;
 
     public synchronized static LazyOne getInstance(){
+        //如果不加锁可能有两个线程都会进入这里。
         if (lazyOne == null){
             lazyOne = new LazyOne();
         }

@@ -35,8 +35,8 @@ public class ThreadSafeTest {
                     }
                 }
             }.start(); //每循环一次，就启动一个线程,具有一定的随机性
-        }
 
+        }
         try {
             // 阻塞
             // count = 0 就会释放所有的共享锁
@@ -45,6 +45,10 @@ public class ThreadSafeTest {
         }catch(Exception e){
             e.printStackTrace();
         }
+
+
+
+
         long end = System.currentTimeMillis();
         System.out.println("总耗时：" + (end - start));
 
