@@ -17,7 +17,7 @@ public class XieMu implements Person {
 
     @Override
     public void zufangzi() {
-        System.out.println("租房子");
+        System.out.println("========租房子========");
     }
 
     @Override

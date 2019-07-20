@@ -9,6 +9,10 @@ import java.lang.reflect.Proxy;
 
 /**
  * Created by Tom on 2018/3/10.
+ * 关键点：
+ * 1、持有target对象
+ * 2、Proxy.newProxyInstance生成代理对象
+ * 3、实现Invocation类，并复写invoke
  */
 public class JDK58 implements InvocationHandler{
     //被代理的对象，把引用给保存下来
