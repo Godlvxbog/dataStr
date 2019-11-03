@@ -18,12 +18,15 @@ public class BinarySearch {
 
         while (left <= right){
             int mid =(left + right)/2;
+            if (mid >=nums.length){
+                return -1;
+            }
             if (target == nums[mid]){
                 return mid;
             }else if (target >nums[mid]){
-                left = mid +1;
+                left = mid+1;
             }else if (target < nums[mid]){
-                right = mid -1;
+                right = mid-1;
             }
         }
 
