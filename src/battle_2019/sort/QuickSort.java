@@ -56,12 +56,12 @@ public class QuickSort {
                 54,35,48,36,27,12,44,44,8,14,26,17,28
         };
 
-        quickSort2(nums,0,nums.length-1,3);
+        quickSort4(nums,0,nums.length-1);
         System.out.println(nums.toString());
 
     }
 
-    public static int part(int[] nums, int i ,int j){
+    public static int partAndSwap(int[] nums, int i ,int j){
         //1、取基准值为数列的第一个。
         int privotValue = nums[i];
         while (i < j){
@@ -170,7 +170,7 @@ public class QuickSort {
 
         //快排
         if (i < j){ //时候还需要做找出探针 + 分左右排序了。递归的进入的条件
-            int pivot = part3(nums,i,j);
+            int pivot = partAndSwap(nums,i,j);
             quickSort2(nums,i,pivot-1,k);
             quickSort2(nums,pivot+1,j,k);
 
@@ -179,6 +179,16 @@ public class QuickSort {
     }
 
 
-    //
+    public static void quickSort4(int[] nums,int i, int j){
+
+        //快排
+        if (i < j){ //时候还需要做找出探针 + 分左右排序了。递归的进入的条件
+            int pivot = partAndSwap(nums,i,j);
+            quickSort4(nums,i,pivot-1);
+            quickSort4(nums,pivot+1,j);
+
+        }
+
+    }
 
 }

@@ -25,13 +25,13 @@ public class JDKProxyTest {
     public static void main(String[] args) {
 
         try {
-//            Person obj = (Person)new JDK58().getInstance(new XieMu());
+            Person obj = (Person)new JDK58().getInstance(new XieMu());
 //            System.out.println(obj.getClass());
-//            obj.findLove();
-            Person xiemu =  new XieMu();
-            DajieHandler dajieHandler = new DajieHandler();
-            Person proxy = dajieHandler.getProxyInstance(xiemu);//获取代理人
-            proxy.zufangzi();
+            obj.findLove();
+//            Person xiemu =  new XieMu();
+//            DajieHandler dajieHandler = new DajieHandler();
+//            Person proxy = dajieHandler.getProxyInstance(xiemu);//获取代理人
+//            proxy.findJob();
 
 
             //原理：
@@ -45,10 +45,10 @@ public class JDKProxyTest {
             //JDK中有个规范，只要要是$开头的一般都是自动生成的
 
             //通过反编译工具可以查看源代码
-            byte [] bytes = ProxyGenerator.generateProxyClass("$Proxy0",new Class[]{Person.class});
-            FileOutputStream os = new FileOutputStream("$Proxy0.class");
-            os.write(bytes);
-            os.close();
+//            byte [] bytes = ProxyGenerator.generateProxyClass("$Proxy0",new Class[]{Person.class});
+//            FileOutputStream os = new FileOutputStream("$Proxy0.class");
+//            os.write(bytes);
+//            os.close();
 
 
 

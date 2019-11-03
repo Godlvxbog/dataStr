@@ -9,9 +9,8 @@ import pattern.proxy.staticed.Person;
 public class XieMu implements Person {
 
     public void findLove(){
-        System.out.println("高富帅");
-        System.out.println("身高180cm");
-        System.out.println("胸大，6块腹肌");
+        System.out.println("我要相亲");
+
 
     }
 

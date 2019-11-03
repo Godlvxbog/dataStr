@@ -30,13 +30,11 @@ public class JDK58 implements InvocationHandler{
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-
-        System.out.println("我是58：我要给你找工作，现在已经拿到你的简历");
-        System.out.println("开始投递");
+        System.out.println("Before");
 
         method.invoke(this.target,args);
 
-        System.out.println("安排面试");
+        System.out.println("After");
 
         return  null;
     }

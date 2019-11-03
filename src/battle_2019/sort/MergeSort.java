@@ -1,4 +1,4 @@
-package his_2018.alg.sortMethod;
+package battle_2019.sort;
 
 /**
  * Created by Administrator on 2017/2/25.
@@ -19,7 +19,7 @@ public class MergeSort {
 
     }
 
-    //合并两个已经有序的数组[fist,mid ]  [mid + 1, last]
+    //合并两个已经有序的数组[fist,mid ]  [mid + 1, last],始终都要维护这个循环不变量
     public static void mergeArray(int[] a,int first, int mid, int last, int[] temp){
         //1设置两个指针,得到两个数组
         int i = first,m = mid;

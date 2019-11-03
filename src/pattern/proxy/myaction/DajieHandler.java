@@ -33,12 +33,9 @@ public class DajieHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         //代理类要做的事情，invoke
-        System.out.println("联系房东");
-        System.out.println("联系签合同");
-        System.out.println("联系贷款");
+        System.out.println("======前置工作======");
         method.invoke(this.target,args);
-        System.out.println("落户");
-        System.out.println("发房本");
+        System.out.println("======后置工作======");
 
         return null;
     }
