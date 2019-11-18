@@ -24,6 +24,9 @@ public class OrderTree {
         TreeNode node = TreeNode.buildTree();
         List<Integer> res = new OrderTree().preorderTraversal(node);
         System.out.println(res);
+
+
+        preorderTraversal2(node);
     }
 
 
@@ -38,6 +41,18 @@ public class OrderTree {
         }
     }
 
+
+    public static void preorderTraversal2(TreeNode root) {
+        //终止条件
+        if (root ==null){
+            return ;
+        }
+
+        //递归过程：先打印根节点，然后访问左右孩子
+        System.out.println(root.data);
+        preorderTraversal2(root.left);
+        preorderTraversal2(root.right);
+    }
 
     public  List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
