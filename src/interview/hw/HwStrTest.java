@@ -95,6 +95,54 @@ public class HwStrTest {
         Collections.sort(list11);
         System.out.println(list11);
 
+
+        double res11 =  getCubeRoot(216);
+        System.out.println(res11);
+
+    }
+
+    /**思路一：
+     * 命f(x) = x^3 - a，求解f(x) = x^3 - a = 0。
+     * 利用泰勒公式展开，即f(x)在xo处的函数值为：
+     * f(x) = f(xo) +f'(xo)(x-xo) = xo^3-a+3xo^2(x-x0) = 0，
+     * 解之得：x = xo - (xo^3 - a) / (3xo^2)。
+     *
+     *
+     * 求平方根用一个套路@_@：
+     * 命f(x) = x^2 - a，求解f(x) = x^2 - a = 0。
+     * 利用泰勒公式展开，即f(x)在xo处的函数值为：
+     * f(x) = f(xo) +f'(xo)(x-xo) = xo^2-a+2xo(x-x0) = 0，
+     * 解之得：x = (x+a/xo) / 2。
+     *
+     *
+     *
+     * 思路二：
+     * 在一定的进度范围内，查找某个元素， f(x)  == input
+     * 这里需要考虑输入为负数。 （-1)^3 = -1
+     *
+     * @param input
+     * @return
+     */
+    private static double getCubeRoot(double input){
+        //变量初始化
+        double min = 0;
+        double max = Math.abs(input) ;
+        double mid = min + (max - min )/2;
+
+        //具体逻辑
+        final double THRESHOULD = 0.00001;
+        while (Math.abs( max - min )> THRESHOULD){
+            mid = min + (max - min )/2;
+            if (mid * mid * mid > input){
+                max = mid;
+            }else if (mid * mid * mid < input){
+                min = mid;
+            }else {
+                return mid;
+            }
+        }
+        return mid;
+
     }
 
 
